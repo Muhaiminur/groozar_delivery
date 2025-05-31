@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:grozaar_delivery/view/splash_screen.dart';
 import 'package:provider/provider.dart';
+
+import '../core/provider/auth_provider.dart';
 import '../core/utility/keys.dart';
 import '../core/utility/route_observer.dart';
 import '../core/utility/routes.dart';
@@ -36,8 +38,8 @@ class _GrozaarState extends State<Grozaar> {
       resizeToAvoidBottomInset: false,
       body: MultiProvider(
         providers: [
-          /*ChangeNotifierProvider(create: (_) => CommonProvider()),
           ChangeNotifierProvider(create: (_) => AuthProvider()),
+          /*ChangeNotifierProvider(create: (_) => CommonProvider()),
           ChangeNotifierProvider(create: (_) => CartProvider()),*/
         ],
         child: MaterialApp(

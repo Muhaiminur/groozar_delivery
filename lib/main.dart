@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
-        return MaterialApp(debugShowCheckedModeBanner: true, home: Grozaar());
+        return MaterialApp(home: Grozaar());
       },
     );
   }
