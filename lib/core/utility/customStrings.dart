@@ -1,0 +1,34 @@
+class CustomStrings {
+  String welcomeNote = "Fund to earn and impact, Today!";
+  String contentType = 'Content-Type';
+  String contentTypeValue = 'application/json';
+  String tryAgainLater = 'Try Again Later';
+  String tryAgain = 'Try Again';
+  String exit = 'Are you sure you want to exit?';
+  String yes = 'Yes';
+  String exitLabel = 'Exit!';
+  String no = 'No';
+  String ok = 'Ok';
+  String home = "Home";
+  String categories = "Categories";
+  String favourite = "Favourite";
+  String profile = "Profile";
+  String cancel = "Cancel";
+  String confirm = "Confirm";
+  String deviceType = 'DEVICE-TYPE';
+  String token = 'Authorization';
+  String android = 'android';
+  String ios = 'ios';
+  String getStarted = 'Get Started';
+  String done = "Done";
+  String close = "Close";
+  String seeAll = "See All";
+  String productDetails = "Product Details";
+  String cart = "Cart";
+  String checkout = "Checkout";
+  String register = "Register";
+  String login = "Login";
+  String required = "Required";
+  String invalidEmail = "Invalid Email";
+  String loginModel = 'loginModel';
+}
