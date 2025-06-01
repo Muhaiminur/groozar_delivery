@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grozaar_delivery/view/general/promotion_screen.dart';
 
 import '../../../core/singleton/logger.dart';
 import '../../../core/singleton/shared_pref.dart';
@@ -71,7 +72,7 @@ class MainPageScreenState extends State<MainPage> {
           children: [
             HomePage(),
             HomePage(),
-            HomePage(),
+            PromotionPage(),
             logged.isNotEmpty ? HomePage() : LoginPage(),
           ],
         ),
