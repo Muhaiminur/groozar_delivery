@@ -7,6 +7,8 @@ import '../core/provider/auth_provider.dart';
 import '../core/utility/keys.dart';
 import '../core/utility/route_observer.dart';
 import '../core/utility/routes.dart';
+import 'authentication/login_screen.dart';
+import 'homepage/main_screen.dart';
 
 class Grozaar extends StatefulWidget {
   Grozaar({super.key});
@@ -49,6 +51,8 @@ class _GrozaarState extends State<Grozaar> {
           initialRoute: splash,
           routes: {
             splash: (context) => const Splash(),
+            mainPage: (context) => const MainPage(),
+            loginPage: (context) => const LoginPage(),
             /*welcomePage: (context) => const WelcomePage(),
             homePage: (context) => const HomePage(),
             mainPage: (context) => const MainPage(),

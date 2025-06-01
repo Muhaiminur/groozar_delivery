@@ -53,9 +53,9 @@ class SplashScreenState extends State<Splash> {
       SharedPref.setString(CustomStrings().deviceType, CustomStrings().ios);
     }
     if (logged.isEmpty) {
-      Navigator.pushReplacementNamed(context, welcomePage);
+      Navigator.pushReplacementNamed(context, loginPage);
     } else {
-      Navigator.pushReplacementNamed(context, welcomePage);
+      Navigator.pushReplacementNamed(context, mainPage);
     }
   }
 
