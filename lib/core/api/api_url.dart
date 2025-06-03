@@ -18,6 +18,9 @@ class ApiUrl {
   static const String ongoingOrderUrl = "user/ongoing-orders";
   static const String completeOrderUrl = "user/completed-orders";
   static const String orderDetails = "user/order/";
-  static const String promotionUrl = "user/get-promotions";
   static const String orderReceiveUrl = "/status-change";
+
+  static const String notificationUrl = "delivery-man/get-notifications";
+  static const String acceptedOrderUrl = "delivery-man/get-current-orders";
+  static const String completeOrderListUrl = "delivery-man/get-previous-orders";
 }

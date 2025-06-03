@@ -11,6 +11,8 @@ import '../../core/provider/auth_provider.dart';
 import '../../core/utility/colors.dart';
 import '../../core/utility/customStrings.dart';
 import '../../core/utility/routes.dart';
+import '../general/notification_screen.dart';
+import '../order/order_list_screen.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -110,6 +112,8 @@ class ProfilePageScreenState extends State<ProfilePage> {
                                           imageBuilder:
                                               (context, imageProvider) =>
                                                   Container(
+                                                    height: 50,
+                                                    width: 50,
                                                     decoration: BoxDecoration(
                                                       shape: BoxShape.circle,
                                                       image: DecorationImage(
@@ -124,13 +128,17 @@ class ProfilePageScreenState extends State<ProfilePage> {
                                           errorWidget:
                                               (context, url, error) =>
                                                   SvgPicture.asset(
+                                                    height: 20,
+                                                    width: 50,
                                                     "assets/images/ic_user.svg",
-                                                    fit: BoxFit.cover,
+                                                    fit: BoxFit.none,
                                                   ),
                                         )
                                         : SvgPicture.asset(
+                                          height: 20,
+                                          width: 20,
                                           "assets/images/ic_user.svg",
-                                          fit: BoxFit.cover,
+                                          fit: BoxFit.none,
                                         ),
                               ),
                               Column(
@@ -266,12 +274,12 @@ class ProfilePageScreenState extends State<ProfilePage> {
                                 ),
                                 onTap: () {
                                   //Navigator.pushNamed(context, orderListPage);
-                                  /*Navigator.of(context).push(
+                                  Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder:
                                           (context) => const OrderListPage(),
                                     ),
-                                  );*/
+                                  );
                                 },
                                 trailing: Icon(
                                   Icons.arrow_circle_right_sharp,
@@ -304,6 +312,12 @@ class ProfilePageScreenState extends State<ProfilePage> {
                                       builder: (context) => PromotionPage(),
                                     ),
                                   );*/
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder:
+                                          (context) => const NotificationPage(),
+                                    ),
+                                  );
                                 },
                                 trailing: Icon(
                                   Icons.arrow_circle_right_sharp,

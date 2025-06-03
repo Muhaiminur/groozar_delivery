@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grozaar_delivery/core/provider/order_provider.dart';
 import 'package:grozaar_delivery/view/profile/profile_edit_screen.dart';
 import 'package:grozaar_delivery/view/profile/profile_screen.dart';
 import 'package:grozaar_delivery/view/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../core/provider/auth_provider.dart';
+import '../core/provider/common_provider.dart';
 import '../core/utility/keys.dart';
 import '../core/utility/route_observer.dart';
 import '../core/utility/routes.dart';
 import 'authentication/login_screen.dart';
+import 'general/notification_screen.dart';
 import 'homepage/main_screen.dart';
 
 class Grozaar extends StatefulWidget {
@@ -43,7 +46,9 @@ class _GrozaarState extends State<Grozaar> {
       body: MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => AuthProvider()),
-          /*ChangeNotifierProvider(create: (_) => CommonProvider()),
+          ChangeNotifierProvider(create: (_) => OrderProvider()),
+          ChangeNotifierProvider(create: (_) => CommonProvider()),
+          /*,
           ChangeNotifierProvider(create: (_) => CartProvider()),*/
         ],
         child: MaterialApp(
@@ -57,6 +62,8 @@ class _GrozaarState extends State<Grozaar> {
             loginPage: (context) => const LoginPage(),
             profilePage: (context) => const ProfilePage(),
             profileEditPage: (context) => const ProfileEditPage(),
+            notificationPage: (context) => const NotificationPage(),
+
             /*welcomePage: (context) => const WelcomePage(),
             homePage: (context) => const HomePage(),
             mainPage: (context) => const MainPage(),

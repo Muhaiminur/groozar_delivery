@@ -8,7 +8,6 @@ class Assets {
   static const String assetsImagesIcSplash = 'assets/images/ic_splash.svg';
   static const String authenticationLoginScreen = 'lib/view/authentication/login_screen.dart';
   static const String generalNotificationScreen = 'lib/view/general/notification_screen.dart';
-  static const String generalPromotionScreen = 'lib/view/general/promotion_screen.dart';
   static const String generatedAssets = 'lib/generated/assets.dart';
   static const String homepageHomeScreen = 'lib/view/homepage/home_screen.dart';
   static const String homepageMainScreen = 'lib/view/homepage/main_screen.dart';
@@ -29,12 +28,18 @@ class Assets {
   static const String imagesIcWelcome = 'assets/images/ic_welcome.png';
   static const String imagesPlaceholderImage = 'assets/images/placeholder_image.png';
   static const String libMain = 'lib/main.dart';
+  static const String modelNotificationResponse = 'lib/model/notification_response.dart';
+  static const String modelOrderResponse = 'lib/model/order_response.dart';
   static const String modelPromotionResponse = 'lib/model/promotion_response.dart';
   static const String modelUserDetailsResponse = 'lib/model/user_details_response.dart';
   static const String modelUserResponse = 'lib/model/user_response.dart';
+  static const String orderOrderDetailsScreen = 'lib/view/order/order_details_screen.dart';
+  static const String orderOrderListScreen = 'lib/view/order/order_list_screen.dart';
   static const String profileProfileEditScreen = 'lib/view/profile/profile_edit_screen.dart';
+  static const String profileProfileScreen = 'lib/view/profile/profile_screen.dart';
   static const String providerAuthProvider = 'lib/core/provider/auth_provider.dart';
   static const String providerCommonProvider = 'lib/core/provider/common_provider.dart';
+  static const String providerOrderProvider = 'lib/core/provider/order_provider.dart';
   static const String singletonAppFlavor = 'lib/core/singleton/AppFlavor.dart';
   static const String singletonLogger = 'lib/core/singleton/logger.dart';
   static const String singletonSharedPref = 'lib/core/singleton/shared_pref.dart';
