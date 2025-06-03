@@ -55,7 +55,7 @@ class HomePageScreenState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.fromLTRB(10, 5, 10, 10),
+                  padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

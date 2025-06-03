@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grozaar_delivery/view/profile/profile_edit_screen.dart';
+import 'package:grozaar_delivery/view/profile/profile_screen.dart';
 import 'package:grozaar_delivery/view/splash_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -53,6 +55,8 @@ class _GrozaarState extends State<Grozaar> {
             splash: (context) => const Splash(),
             mainPage: (context) => const MainPage(),
             loginPage: (context) => const LoginPage(),
+            profilePage: (context) => const ProfilePage(),
+            profileEditPage: (context) => const ProfileEditPage(),
             /*welcomePage: (context) => const WelcomePage(),
             homePage: (context) => const HomePage(),
             mainPage: (context) => const MainPage(),

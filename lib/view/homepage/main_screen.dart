@@ -12,6 +12,7 @@ import '../../../generated/assets.dart';
 import '../../core/utility/colors.dart';
 import '../../core/utility/customStrings.dart';
 import '../authentication/login_screen.dart';
+import '../profile/profile_screen.dart';
 import 'home_screen.dart';
 
 class MainPage extends StatefulWidget {
@@ -73,7 +74,7 @@ class MainPageScreenState extends State<MainPage> {
             HomePage(),
             HomePage(),
             PromotionPage(),
-            logged.isNotEmpty ? HomePage() : LoginPage(),
+            logged.isNotEmpty ? ProfilePage() : LoginPage(),
           ],
         ),
         bottomNavigationBar: Container(

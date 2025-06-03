@@ -8,7 +8,7 @@ class ApiUrl {
   static const String productDetailsUrl = "user/get-product-details/";
   static const String signUpUrl = "register";
   static const String signInUrl = "login";
-  static const String userDetailsUrl = "user";
+  static const String userDetailsUrl = "delivery-man/get-profile-details";
   static const String userUpdateUrl = "user/update-profile";
   static const String cartAddUrl = "user/cart/plus";
   static const String cartDeductUrl = "user/cart/minus";

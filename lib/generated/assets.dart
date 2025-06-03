@@ -30,7 +30,9 @@ class Assets {
   static const String imagesPlaceholderImage = 'assets/images/placeholder_image.png';
   static const String libMain = 'lib/main.dart';
   static const String modelPromotionResponse = 'lib/model/promotion_response.dart';
+  static const String modelUserDetailsResponse = 'lib/model/user_details_response.dart';
   static const String modelUserResponse = 'lib/model/user_response.dart';
+  static const String profileProfileEditScreen = 'lib/view/profile/profile_edit_screen.dart';
   static const String providerAuthProvider = 'lib/core/provider/auth_provider.dart';
   static const String providerCommonProvider = 'lib/core/provider/common_provider.dart';
   static const String singletonAppFlavor = 'lib/core/singleton/AppFlavor.dart';

@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/singleton/shared_pref.dart';
-import '../../../core/utility/custom_appbar.dart';
 import '../../core/provider/auth_provider.dart';
 import '../../core/utility/colors.dart';
 import '../../core/utility/customStrings.dart';
@@ -42,13 +41,23 @@ class LoginPageScreenState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ProjectColors().white,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight), // Set
-        child: CustomAppBar(
-          title: CustomStrings().login,
-          onTap: () {
-            Navigator.pop(context);
-          },
+        child: AppBar(
+          backgroundColor: ProjectColors().primaryColor,
+          title: Text(
+            CustomStrings().login,
+            style: GoogleFonts.roboto(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+              color: ProjectColors().white2,
+            ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            softWrap: true,
+          ),
+          centerTitle: true,
         ),
       ),
       body: SafeArea(
@@ -168,11 +177,17 @@ class LoginPageScreenState extends State<LoginPage> {
                                 ),
                                 hintText: "Enter Email Address",
                                 border: OutlineInputBorder(
-                                  borderSide: BorderSide(width: 1, color: ProjectColors().white4),
+                                  borderSide: BorderSide(
+                                    width: 1,
+                                    color: ProjectColors().white4,
+                                  ),
                                   borderRadius: BorderRadius.circular(22.0),
                                 ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(width: 1, color: ProjectColors().white4),
+                                  borderSide: BorderSide(
+                                    width: 1,
+                                    color: ProjectColors().white4,
+                                  ),
                                   borderRadius: BorderRadius.circular(22.0),
                                 ),
                               ),
@@ -244,11 +259,17 @@ class LoginPageScreenState extends State<LoginPage> {
                                 ),
                                 hintText: "*********",
                                 border: OutlineInputBorder(
-                                  borderSide: BorderSide(width: 1, color: ProjectColors().white4),
+                                  borderSide: BorderSide(
+                                    width: 1,
+                                    color: ProjectColors().white4,
+                                  ),
                                   borderRadius: BorderRadius.circular(22.0),
                                 ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(width: 1, color: ProjectColors().white4),
+                                  borderSide: BorderSide(
+                                    width: 1,
+                                    color: ProjectColors().white4,
+                                  ),
                                   borderRadius: BorderRadius.circular(22.0),
                                 ),
                                 suffixIcon: IconButton(
