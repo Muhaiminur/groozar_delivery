@@ -38,9 +38,10 @@ class SplashScreenState extends State<Splash> {
   Widget build(BuildContext context) {
     return Material(
       child: Image.asset(
+        fit: BoxFit.cover,
         "assets/images/ic_splash.png",
-        height: double.infinity,
-        width: double.infinity,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
       ),
     );
   }

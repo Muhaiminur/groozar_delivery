@@ -42,6 +42,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ProjectColors().white,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight), // Set
         child: CustomAppBar(
@@ -96,7 +97,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                     .watch<OrderProvider>()
                                     .orderDetailsResponse
                                     ?.data
-                                    ?.order
                                     ?.invoiceNo ??
                                 "",
                             style: GoogleFonts.roboto(
@@ -147,7 +147,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                             .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
-                                            ?.order
                                             ?.shippingInfo
                                             ?.address ??
                                         "",
@@ -170,7 +169,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                                 .watch<OrderProvider>()
                                                 .orderDetailsResponse
                                                 ?.data
-                                                ?.order
                                                 ?.customer
                                                 ?.fullName ==
                                             "Customer"
@@ -184,7 +182,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                             .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
-                                            ?.order
                                             ?.customer
                                             ?.fullName ??
                                         "",
@@ -212,7 +209,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                             .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
-                                            ?.order
                                             ?.shippingInfo
                                             ?.phone ??
                                         "",
@@ -260,7 +256,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                         .watch<OrderProvider>()
                                         .orderDetailsResponse
                                         ?.data
-                                        ?.order
                                         ?.time ??
                                     "0 Days",
                                 style: GoogleFonts.roboto(
@@ -324,7 +319,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                             .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
-                                            ?.deliveryCost ??
+                                            ?.taxAmount ??
                                         "0",
                                     style: GoogleFonts.roboto(
                                       fontSize: 14,
@@ -361,7 +356,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                             .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
-                                            ?.order
                                             ?.taxAmount ??
                                         "0",
                                     style: GoogleFonts.roboto(
@@ -404,7 +398,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                             .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
-                                            ?.order
                                             ?.price ??
                                         "0",
                                     style: GoogleFonts.roboto(
@@ -452,7 +445,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                         .watch<OrderProvider>()
                                         .orderDetailsResponse
                                         ?.data
-                                        ?.order
+
                                         ?.status ==
                                     "received"
                                 ? false
@@ -520,14 +513,12 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                     .watch<OrderProvider>()
                     .orderDetailsResponse
                     ?.data
-                    ?.order
                     ?.orderItems !=
                 null &&
             context
                 .watch<OrderProvider>()
                 .orderDetailsResponse!
                 .data!
-                .order!
                 .orderItems!
                 .isNotEmpty
         ? ListView.builder(
@@ -538,7 +529,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                   .watch<OrderProvider>()
                   .orderDetailsResponse
                   ?.data
-                  ?.order
                   ?.orderItems
                   ?.length,
           itemBuilder: (BuildContext context, int index) {
@@ -560,7 +550,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                             .watch<OrderProvider>()
                             .orderDetailsResponse
                             ?.data
-                            ?.order
                             ?.orderItems
                             ?.elementAt(index)
                             ?.product
@@ -589,7 +578,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                             .watch<OrderProvider>()
                             .orderDetailsResponse
                             ?.data
-                            ?.order
                             ?.orderItems
                             ?.elementAt(index)
                             ?.productName ??
@@ -610,7 +598,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                           .watch<OrderProvider>()
                           .orderDetailsResponse
                           ?.data
-                          ?.order
                           ?.orderItems
                           ?.elementAt(index)
                           ?.price ??
@@ -638,14 +625,12 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                     .watch<OrderProvider>()
                     .orderDetailsResponse
                     ?.data
-                    ?.order
                     ?.orderHistories !=
                 null &&
             context
                 .watch<OrderProvider>()
                 .orderDetailsResponse!
                 .data!
-                .order!
                 .orderHistories!
                 .isNotEmpty
         ? FixedTimeline.tileBuilder(
@@ -661,7 +646,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                               .watch<OrderProvider>()
                               .orderDetailsResponse
                               ?.data
-                              ?.order
                               ?.orderHistories
                               ?.elementAt(index)
                               ?.statusTitle ??
@@ -674,7 +658,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                     .watch<OrderProvider>()
                     .orderDetailsResponse
                     ?.data
-                    ?.order
                     ?.orderHistories
                     ?.length ??
                 0,
@@ -684,7 +667,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                           .watch<OrderProvider>()
                           .orderDetailsResponse
                           ?.data
-                          ?.order
                           ?.orderHistories
                           ?.elementAt(index)
                           ?.status ??
@@ -697,7 +679,6 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                           .watch<OrderProvider>()
                           .orderDetailsResponse
                           ?.data
-                          ?.order
                           ?.orderHistories
                           ?.elementAt(index)
                           ?.status ??
