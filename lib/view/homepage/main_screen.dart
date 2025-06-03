@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grozaar_delivery/view/general/notification_screen.dart';
+import 'package:grozaar_delivery/view/order/order_list_screen.dart';
 
 import '../../../core/singleton/logger.dart';
 import '../../../core/singleton/shared_pref.dart';
@@ -72,7 +73,7 @@ class MainPageScreenState extends State<MainPage> {
           controller: _pageController,
           children: [
             HomePage(),
-            HomePage(),
+            OrderListPage(),
             NotificationPage(),
             logged.isNotEmpty ? ProfilePage() : LoginPage(),
           ],
@@ -103,19 +104,19 @@ class MainPageScreenState extends State<MainPage> {
                 ),
                 BottomNavigationBarItem(
                   icon: NavItem(
-                    iconString: Assets.imagesIcCategory,
+                    iconString: "assets/images/ic_order_history.svg",
                     isSelected: 1 == _page,
-                    label: CustomStrings().categories,
+                    label: "Order History",
                   ),
-                  label: CustomStrings().categories,
+                  label: "Order History",
                 ),
                 BottomNavigationBarItem(
                   icon: NavItem(
-                    iconString: Assets.imagesIcFab,
+                    iconString: "assets/images/ic_notification.svg",
                     isSelected: 2 == _page,
-                    label: CustomStrings().favourite,
+                    label: "Notifications",
                   ),
-                  label: CustomStrings().favourite,
+                  label: "Notifications",
                 ),
                 BottomNavigationBarItem(
                   icon: NavItem(

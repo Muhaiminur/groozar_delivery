@@ -1,6 +1,12 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:grozaar_delivery/core/provider/order_provider.dart';
+import 'package:provider/provider.dart';
+import 'package:timelines_plus/timelines_plus.dart';
 
 import '../../../core/singleton/shared_pref.dart';
+import '../../../core/utility/customColorLoader.dart';
 import '../../../core/utility/custom_appbar.dart';
 import '../../core/utility/colors.dart';
 import '../../core/utility/customStrings.dart';
@@ -25,7 +31,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
 
   _loadHomeData({required bool isReload}) {
     logged = SharedPref.getString(CustomStrings().token);
-    //context.read<CartProvider>().orderDetailsCall(widget.args["id"]);
+    context.read<OrderProvider>().orderDetailsCall(widget.args["id"]);
   }
 
   @override
@@ -52,7 +58,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
             child: Column(
               spacing: 10,
               children: [
-                /*Container(
+                Container(
                   width: double.infinity,
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
@@ -87,7 +93,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                           Spacer(),
                           Text(
                             context
-                                    .watch<CartProvider>()
+                                    .watch<OrderProvider>()
                                     .orderDetailsResponse
                                     ?.data
                                     ?.order
@@ -138,7 +144,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                   ),
                                   Text(
                                     context
-                                            .watch<CartProvider>()
+                                            .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
                                             ?.order
@@ -161,7 +167,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                 children: [
                                   Icon(
                                     context
-                                                .watch<CartProvider>()
+                                                .watch<OrderProvider>()
                                                 .orderDetailsResponse
                                                 ?.data
                                                 ?.order
@@ -175,7 +181,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                   ),
                                   Text(
                                     context
-                                            .watch<CartProvider>()
+                                            .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
                                             ?.order
@@ -203,7 +209,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                                   ),
                                   Text(
                                     context
-                                            .watch<CartProvider>()
+                                            .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
                                             ?.order
@@ -251,7 +257,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                               Spacer(),
                               Text(
                                 context
-                                        .watch<CartProvider>()
+                                        .watch<OrderProvider>()
                                         .orderDetailsResponse
                                         ?.data
                                         ?.order
@@ -315,7 +321,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
 
                                   Text(
                                     context
-                                            .watch<CartProvider>()
+                                            .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
                                             ?.deliveryCost ??
@@ -352,7 +358,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
 
                                   Text(
                                     context
-                                            .watch<CartProvider>()
+                                            .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
                                             ?.order
@@ -395,7 +401,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
 
                                   Text(
                                     context
-                                            .watch<CartProvider>()
+                                            .watch<OrderProvider>()
                                             .orderDetailsResponse
                                             ?.data
                                             ?.order
@@ -440,10 +446,10 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                           child: timeline(),
                         ),
                       ),
-                      Visibility(
+                      /* Visibility(
                         visible:
                             context
-                                        .watch<CartProvider>()
+                                        .watch<OrderProvider>()
                                         .orderDetailsResponse
                                         ?.data
                                         ?.order
@@ -476,12 +482,12 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                           ),
                           onPressed: () {
                             context
-                                .read<CartProvider>()
+                                .read<OrderProvider>()
                                 .orderReceiveCall(widget.args["id"])
                                 .then((value) {
                                   if (value == 200 || value == 001) {
                                     context
-                                        .read<CartProvider>()
+                                        .read<OrderProvider>()
                                         .orderDetailsCall(widget.args["id"]);
                                   }
                                 });
@@ -495,11 +501,11 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                             ),
                           ),
                         ),
-                      ),
+                      ),*/
                       SizedBox(height: 70),
                     ],
                   ),
-                ),*/
+                ),
               ],
             ),
           ),
@@ -508,17 +514,17 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
     );
   }
 
-  /*Widget productList() {
-    return context.watch<CartProvider>().orderDetailsResponse != null &&
+  Widget productList() {
+    return context.watch<OrderProvider>().orderDetailsResponse != null &&
             context
-                    .watch<CartProvider>()
+                    .watch<OrderProvider>()
                     .orderDetailsResponse
                     ?.data
                     ?.order
                     ?.orderItems !=
                 null &&
             context
-                .watch<CartProvider>()
+                .watch<OrderProvider>()
                 .orderDetailsResponse!
                 .data!
                 .order!
@@ -529,7 +535,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
           scrollDirection: Axis.vertical,
           itemCount:
               context
-                  .watch<CartProvider>()
+                  .watch<OrderProvider>()
                   .orderDetailsResponse
                   ?.data
                   ?.order
@@ -551,7 +557,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                     width: 25,
                     imageUrl:
                         context
-                            .watch<CartProvider>()
+                            .watch<OrderProvider>()
                             .orderDetailsResponse
                             ?.data
                             ?.order
@@ -580,7 +586,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                 Expanded(
                   child: Text(
                     context
-                            .watch<CartProvider>()
+                            .watch<OrderProvider>()
                             .orderDetailsResponse
                             ?.data
                             ?.order
@@ -601,7 +607,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                 ),
                 Text(
                   context
-                          .watch<CartProvider>()
+                          .watch<OrderProvider>()
                           .orderDetailsResponse
                           ?.data
                           ?.order
@@ -627,16 +633,16 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
   }
 
   Widget timeline() {
-    return context.watch<CartProvider>().orderDetailsResponse != null &&
+    return context.watch<OrderProvider>().orderDetailsResponse != null &&
             context
-                    .watch<CartProvider>()
+                    .watch<OrderProvider>()
                     .orderDetailsResponse
                     ?.data
                     ?.order
                     ?.orderHistories !=
                 null &&
             context
-                .watch<CartProvider>()
+                .watch<OrderProvider>()
                 .orderDetailsResponse!
                 .data!
                 .order!
@@ -652,7 +658,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       context
-                              .watch<CartProvider>()
+                              .watch<OrderProvider>()
                               .orderDetailsResponse
                               ?.data
                               ?.order
@@ -665,7 +671,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
                 ),
             itemCount:
                 context
-                    .watch<CartProvider>()
+                    .watch<OrderProvider>()
                     .orderDetailsResponse
                     ?.data
                     ?.order
@@ -675,7 +681,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
             itemExtent: 90,
             connectorBuilder: (context, index, type) {
               return context
-                          .watch<CartProvider>()
+                          .watch<OrderProvider>()
                           .orderDetailsResponse
                           ?.data
                           ?.order
@@ -688,7 +694,7 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
             },
             indicatorBuilder: (context, index) {
               return context
-                          .watch<CartProvider>()
+                          .watch<OrderProvider>()
                           .orderDetailsResponse
                           ?.data
                           ?.order
@@ -714,5 +720,5 @@ class OrderDetailsPageScreenState extends State<OrderDetailsPage> {
           ),
         )
         : SizedBox();
-  }*/
+  }
 }

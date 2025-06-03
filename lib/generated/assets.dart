@@ -29,6 +29,7 @@ class Assets {
   static const String imagesPlaceholderImage = 'assets/images/placeholder_image.png';
   static const String libMain = 'lib/main.dart';
   static const String modelNotificationResponse = 'lib/model/notification_response.dart';
+  static const String modelOrderDetailsResponse = 'lib/model/order_details_response.dart';
   static const String modelOrderResponse = 'lib/model/order_response.dart';
   static const String modelPromotionResponse = 'lib/model/promotion_response.dart';
   static const String modelUserDetailsResponse = 'lib/model/user_details_response.dart';

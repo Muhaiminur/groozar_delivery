@@ -307,7 +307,61 @@ class OrderListPageScreenState extends State<OrderListPage> {
                                 ),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              if (context
+                                      .read<OrderProvider>()
+                                      .orderResponse
+                                      .data
+                                      ?.data
+                                      ?.elementAt(index)
+                                      ?.status ==
+                                  "Packaged") {
+                                context
+                                    .read<OrderProvider>()
+                                    .orderUpdateCall(
+                                      context
+                                              .read<OrderProvider>()
+                                              .orderResponse
+                                              .data
+                                              ?.data
+                                              ?.elementAt(index)
+                                              ?.id ??
+                                          "",
+                                      "collected",
+                                    )
+                                    .then((value) {
+                                      context
+                                          .read<OrderProvider>()
+                                          .acceptedOrderCall();
+                                    });
+                              } else if (context
+                                      .read<OrderProvider>()
+                                      .orderResponse
+                                      .data
+                                      ?.data
+                                      ?.elementAt(index)
+                                      ?.status ==
+                                  "Collected") {
+                                context
+                                    .read<OrderProvider>()
+                                    .orderUpdateCall(
+                                      context
+                                              .read<OrderProvider>()
+                                              .orderResponse
+                                              .data
+                                              ?.data
+                                              ?.elementAt(index)
+                                              ?.id ??
+                                          "",
+                                      "delivered",
+                                    )
+                                    .then((value) {
+                                      context
+                                          .read<OrderProvider>()
+                                          .acceptedOrderCall();
+                                    });
+                              }
+                            },
                             child: Text(
                               context
                                       .watch<OrderProvider>()
@@ -407,6 +461,7 @@ class OrderListPageScreenState extends State<OrderListPage> {
         ? ListView.builder(
           shrinkWrap: true,
           scrollDirection: Axis.vertical,
+          physics: NeverScrollableScrollPhysics(),
           itemCount:
               context.watch<OrderProvider>().orderResponse.data?.data?.length,
           itemBuilder: (BuildContext context, int index) {
